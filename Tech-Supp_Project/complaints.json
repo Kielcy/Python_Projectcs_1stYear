@@ -1,0 +1,13 @@
+[
+    {
+        "id": 1,
+        "issue_type": "Software not responding",
+        "description": "Software not responding",
+        "pc_number": "2",
+        "room_number": "302",
+        "additional_details": "",
+        "timestamp": "2025-04-30 15:26:45",
+        "resolved": true,
+        "priority": "low"
+    }
+]
