@@ -148,6 +148,12 @@ class LabAssist:
         while not room_number.strip():
             print(f"{Colors.RED}! Room number cannot be empty.{Colors.ENDC}")
             room_number = input(f"{Colors.BOLD}Enter room number:{Colors.ENDC} ")
+        
+        # Get student name
+        student_name = input(f"\n{Colors.BOLD}Enter your name:{Colors.ENDC} ")
+        while not student_name.strip():
+            print(f"{Colors.RED}! Name cannot be empty.{Colors.ENDC}")
+            student_name = input(f"{Colors.BOLD}Enter your name:{Colors.ENDC} ")
             
         additional_details = input(f"\n{Colors.BOLD}Any additional details (press Enter if none):{Colors.ENDC} ")
         
@@ -207,6 +213,7 @@ class LabAssist:
             "description": issue_description,
             "pc_number": pc_number,
             "room_number": room_number,
+            "student_name": student_name,
             "additional_details": additional_details,
             "timestamp": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
             "resolved": resolved,
@@ -228,6 +235,7 @@ class LabAssist:
             print(f"{Colors.BLUE}│{Colors.ENDC} {Colors.BOLD}Issue:{Colors.ENDC} {complaint['issue_type']:<41} {Colors.BLUE}│{Colors.ENDC}")
             print(f"{Colors.BLUE}│{Colors.ENDC} {Colors.BOLD}PC Number:{Colors.ENDC} {complaint['pc_number']:<37} {Colors.BLUE}│{Colors.ENDC}")
             print(f"{Colors.BLUE}│{Colors.ENDC} {Colors.BOLD}Room Number:{Colors.ENDC} {complaint['room_number']:<35} {Colors.BLUE}│{Colors.ENDC}")
+            print(f"{Colors.BLUE}│{Colors.ENDC} {Colors.BOLD}Student Name:{Colors.ENDC} {complaint['student_name']:<35} {Colors.BLUE}│{Colors.ENDC}")
             
             status_color = Colors.GREEN if complaint['resolved'] else Colors.YELLOW
             status_text = "Resolved" if complaint['resolved'] else "Unresolved"
@@ -422,6 +430,7 @@ class LabAssist:
         print(f"{Colors.BLUE}│{Colors.ENDC} {Colors.BOLD}Description:{Colors.ENDC} {complaint['description'][:45]:<44} {Colors.BLUE}│{Colors.ENDC}")
         print(f"{Colors.BLUE}│{Colors.ENDC} {Colors.BOLD}PC Number:{Colors.ENDC} {complaint['pc_number']:<46} {Colors.BLUE}│{Colors.ENDC}")
         print(f"{Colors.BLUE}│{Colors.ENDC} {Colors.BOLD}Room Number:{Colors.ENDC} {complaint['room_number']:<44} {Colors.BLUE}│{Colors.ENDC}")
+        print(f"{Colors.BLUE}│{Colors.ENDC} {Colors.BOLD}Student Name:{Colors.ENDC} {complaint['student_name']:<44} {Colors.BLUE}│{Colors.ENDC}")
         
         add_details = complaint['additional_details'] if complaint['additional_details'] else 'None'
         print(f"{Colors.BLUE}│{Colors.ENDC} {Colors.BOLD}Additional Details:{Colors.ENDC} {add_details[:40]:<39} {Colors.BLUE}│{Colors.ENDC}")
@@ -480,7 +489,7 @@ class LabAssist:
                 self.display_welcome()
             elif role == "exit":
                 Colors.clear_screen()
-                print(f"\n{Colors.GREEN}{Colors.BOLD}Thank you for using LabAssist. Goodbye!{Colors.ENDC}")
+                print(f"\n{Colors.GREEN}{Colors.BOLD}Thank You for Using LabAssist! We appreciate your trust in LabAssist to support your laboratory needs. Your efficiency and accuracy are our top priorities, and we’re here to help every step of the way. If you have any feedback or need assistance, don’t hesitate to reach out. See you next time!{Colors.ENDC}")
                 break
 
 
