@@ -598,10 +598,20 @@ class LabAssist:
             print(f"\n{Colors.RED}An unexpected error occurred: {str(e)}{Colors.ENDC}")
             input(f"\n{Colors.BOLD}Press Enter to continue...{Colors.ENDC}")
         finally:
-            # Save any pending changes
+          # Save any pending changes
             self.save_complaints()
             Colors.clear_screen()
-            print(f"\n{Colors.GREEN}Thank you for using Lab Assist. Goodbye!{Colors.ENDC}")
+            print(f"\n{Colors.GREEN}🎉 --You've successfully exited LabAssist – but the mission to make lab life easier never stops!--{Colors.ENDC}")
+            print(f"{Colors.GREEN}Thanks for being part of the solution. Whether you're reporting an issue or resolving one, you've just helped create a smoother, smarter lab experience. 💻⚙️**{Colors.ENDC}")
+            print(f"\n{Colors.GREEN}👨‍💻 Brought to life by your awesome TECHTITANS:{Colors.ENDC}")
+            print(f"{Colors.GREEN}🚀 1.) Charles Christopher B. Organista – Lead Developer{Colors.ENDC}")
+            print(f"{Colors.GREEN}📚 2.) Kate Mergelaine A. Lacanlali – Documentation Specialist{Colors.ENDC}")
+            print(f"{Colors.GREEN}🧩 3.) Phillip Kaizer L. Lagrana – Algorithm Designer{Colors.ENDC}")
+            print(f"{Colors.GREEN}🔧 4.) John Arnold B. Oloteo – Tester / Debugger{Colors.ENDC}")
+            print(f"\n{Colors.GREEN}🏫 Proudly crafted at LORMA Colleges – College of Computer Studies and Engineering{Colors.ENDC}")
+            print(f"{Colors.GREEN}📅 Academic Year 2024–2025{Colors.ENDC}")
+            print(f"\n{Colors.GREEN}💬 \"We don't just code to pass – we code to make an impact.\"{Colors.ENDC}")
+            print(f"\n{Colors.GREEN}✨ See you next log-in! Until then... stay smart, stay helpful, and stay TECHTITANIC! 💙{Colors.ENDC}")
 
 
 if __name__ == "__main__":
