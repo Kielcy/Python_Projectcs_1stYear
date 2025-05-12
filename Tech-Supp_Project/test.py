@@ -10,6 +10,7 @@ import heapq  # Import heapq for priority queue functionality
 class Colors:
     # Main three colors
     PRIMARY = '\033[94m'    # Blue - for headers and UI elements
+    SECONDARY = '\033[96m'  # Cyan - for secondary elements
     SUCCESS = '\033[92m'    # Green - for success messages and positive status
     WARNING = '\033[91m'    # Red - for warnings, errors, and important notices
     
@@ -639,7 +640,7 @@ class LabAssist:
                 print(f"\n{Colors.WARNING}! Failed to update complaint priority.{Colors.ENDC}")
 
     def run(self):
-        """Main program loop"""
+        """Main application loop"""
         while True:
             self.display_welcome()
             role = self.get_role()
@@ -652,8 +653,41 @@ class LabAssist:
                 self.register_admin()
             elif role == "exit":
                 Colors.clear_screen()
-                print(f"\n{Colors.SUCCESS}{Colors.BOLD}Thank you for using Lab Assist!{Colors.ENDC}")
-                print(f"{Colors.PRIMARY}Goodbye!{Colors.ENDC}\n")
+                
+                # Enhanced exit message
+                exit_message = f"""\
+{Colors.SECONDARY}{Colors.BOLD}🎉 LabAssist Exit: A Journey of Innovation 🚀{Colors.ENDC}
+
+{Colors.SUCCESS}You've successfully exited LabAssist – but the mission to make lab life easier never stops!{Colors.ENDC}
+{Colors.PRIMARY}Thanks for being part of the solution. Whether you're reporting an issue or resolving one,
+you've just helped create a smoother, smarter lab experience. 💻⚙️🔒 Your efforts may seem small, but they're part of something bigger – a culture of care, efficiency, and 
+accountability inside the lab.{Colors.ENDC}
+
+{Colors.BOLD}🏆 Our Amazing Team{Colors.ENDC}
+{Colors.PRIMARY}
+            🚀 Charles Christopher B. Organista – Lead Developer
+            📚 Kate Mergelaine A. Lacanlali – Documentation Specialist
+            🧩 Phillip Kaizer L. Lagrana – Algorithm Designer
+            🔧 John Arnold B. Oloteo – Tester / Debugger{Colors.ENDC}
+
+            {Colors.BOLD}🏫 Our Home{Colors.ENDC}
+            {Colors.PRIMARY}Proudly crafted at:
+            LORMA Colleges – College of Computer Studies and Engineering
+            📅 Academic Year 2024–2025{Colors.ENDC}
+
+            {Colors.BOLD}💬 Our Motto{Colors.ENDC}
+            {Colors.SUCCESS}"We don't just code to pass, we code to make an impact."{Colors.ENDC}
+
+            {Colors.PRIMARY}✨ Innovation begins when we care enough to solve real problems.
+            🚪 Exiting now... but our code continues to care.
+
+            🎯 Stay sharp. Stay helpful. Stay TECHTITANIC. 💙💡
+            ✨ Until the next session... keep making a difference.
+            ✨ See you next log-in! Until then... stay smart, stay helpful, and stay TECHTITANIC! 💙{Colors.ENDC}
+            """
+                
+                # Print the exit message with color formatting
+                print(exit_message)
                 break
 
 
